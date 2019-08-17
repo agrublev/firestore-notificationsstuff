@@ -1,0 +1,52 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "entry",
+                "corejs": "3.2.1",
+                "loose": true,
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ],
+        [
+            "@babel/preset-react"
+        ]
+    ],
+    "plugins": [
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ],
+        [
+            "@babel/plugin-syntax-class-properties"
+        ],
+        [
+            "@babel/plugin-proposal-class-properties",
+            {
+                "loose": true
+            }
+        ],
+        [
+            "module-resolver",
+            {
+                "root": ["./"],
+                "alias": {
+                    "@storesWeb": "./src/stores",
+                    "@web": "./",
+                    "@styles": "./src/styles",
+                    "@partials": "./src/views/partials/index.js",
+                    "@views": "./src/views",
+                    "@utils": "./src/utils"
+                }
+            }
+        ],
+        "@babel/plugin-proposal-export-default-from",
+        "@babel/plugin-transform-runtime",
+        "add-react-displayname"
+    ]
+}
